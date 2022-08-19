@@ -17,14 +17,14 @@ public class Student {
 	private String nameSchool;
 	private String serieEnrolled;
 	
-	private List<Disciplina> disciplina = new ArrayList<Disciplina>();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public List<Disciplina> getDisciplina() {
-		return disciplina;
+		return disciplinas;
 	}
 
 	public void setDisciplina(List<Disciplina> disciplina) {
-		this.disciplina = disciplina;
+		this.disciplinas = disciplina;
 	}
 
 	//	Construtor
@@ -129,7 +129,7 @@ public class Student {
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + ", dateNasc=" + dateNasc + ", rg=" + rg + ", cpf=" + cpf
 				+ "\n, nameFather=" + nameFather + ", nameMather=" + nameMather + ", dateEnrollment=" + dateEnrollment
-				+ "\n, nameSchool=" + nameSchool + ", serieEnrolled=" + serieEnrolled + "\n, disciplina=" + disciplina
+				+ "\n, nameSchool=" + nameSchool + ", serieEnrolled=" + serieEnrolled + "\n, disciplina=" + disciplinas
 				+ "]";
 	}
 

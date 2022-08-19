@@ -2,6 +2,7 @@ package cursojava.executavel;
 
 import javax.swing.JOptionPane;
 
+import cursojava.classes.Disciplina;
 import cursojava.classes.Student;
 
 public class FirstClassJava {
@@ -18,7 +19,12 @@ public class FirstClassJava {
 		Student std2 = new Student();
 		
 		std2.setName(nome);
-		std2.setAge(Integer.valueOf(idade));	
+		std2.setAge(Integer.valueOf(idade));
+		
+//		Instacia de disciplina e passando seus atributos
+		Disciplina disciplina1 = new Disciplina();
+		disciplina1.setDisciplina("Banco de Dados");
+		disciplina1.setNota(90);
 		
 //		new Student() is a instance.
 		Student std3 = new Student("Renan");
