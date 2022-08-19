@@ -135,7 +135,14 @@ public class Student {
 
 	//	Metodo que retorna a media do aluno
 	public double getMedia() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for(Disciplina disciplina: disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas / disciplinas.size();
 	}
 	
 //	Metodo para informar se o aluno foi Aprovado

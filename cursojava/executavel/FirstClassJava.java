@@ -24,7 +24,22 @@ public class FirstClassJava {
 //		Instacia de disciplina e passando seus atributos
 		Disciplina disciplina1 = new Disciplina();
 		disciplina1.setDisciplina("Banco de Dados");
-		disciplina1.setNota(90);
+		disciplina1.setNota(95);
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("Java Script");
+		disciplina2.setNota(90);
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Angular");
+		disciplina3.setNota(80);
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("java Web");
+		disciplina4.setNota(100);
+		
+//		Adicionando disciplina a lista de disciplinas
+		std2.getDisciplina().add(disciplina1);
+		std2.getDisciplina().add(disciplina2);
+		std2.getDisciplina().add(disciplina3);
+		std2.getDisciplina().add(disciplina4);
 		
 //		new Student() is a instance.
 		Student std3 = new Student("Renan");
@@ -33,7 +48,8 @@ public class FirstClassJava {
 //		std4 is a reference.
 		Student std4 = new Student("Renan", 25);
 
-		System.out.println(std2);
+		System.out.println("Média do " + std2.getName() + " é: " + std2.getMedia() +
+		(std2.getAlunoAprovado() ? " Aprovado" : " Reprovado"));
 
 	}
 
