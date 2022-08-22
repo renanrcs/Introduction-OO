@@ -34,8 +34,17 @@ public class FirstClassJava {
 		int option = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 		
 		if(option == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover? \n- 1\t - 2\t - 3\t - 4");
-			std2.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+			
+			int continuar = 0;
+			int count = 1;
+			
+			while(continuar == 0) {
+				
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover? \n-1 -2 -3 -4");
+			std2.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() - count);
+			count++;
+			continuar = JOptionPane.showConfirmDialog(null, "Deseja remover outra disciplina?");
+			}
 		}
 
 		System.out.println("Média do " + std2.getName() + " é: " + std2.getMedia() +
@@ -44,3 +53,12 @@ public class FirstClassJava {
 	}
 
 }
+
+
+
+
+
+
+
+
+
