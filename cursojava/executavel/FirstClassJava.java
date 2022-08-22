@@ -30,6 +30,13 @@ public class FirstClassJava {
 //		Adicionando disciplina a lista de disciplinas
 			std2.getDisciplina().add(disciplina);
 		}
+		
+		int option = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if(option == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover? \n- 1\t - 2\t - 3\t - 4");
+			std2.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+		}
 
 		System.out.println("Média do " + std2.getName() + " é: " + std2.getMedia() +
 		(std2.getAlunoAprovado() ? " Aprovado" : " Reprovado"));
