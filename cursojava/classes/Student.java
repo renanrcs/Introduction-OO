@@ -155,6 +155,18 @@ public class Student {
 			return false;
 		}
 	}
+//	Metodo para informar se o aluno foi Aprovado, Recuperação, reprovado
+	public String getAlunoAprovado2() {
+		double media = this.getMedia();
+		
+		if(media >= 5) {
+			if(media >= 7)
+				return " Aluno Aprovado";
+			return " Aluno em recuperação";
+		}else {
+			return " Reprovado";
+		}
+	}
 
 	@Override
 	public int hashCode() {

@@ -10,13 +10,13 @@ public class FirstClassJava {
 	public static void main(String[] args) {
 		
 		String nome = JOptionPane.showInputDialog("Informe seu nome");
-		String idade = JOptionPane.showInputDialog("Informe sua idade");
+//		String idade = JOptionPane.showInputDialog("Informe sua idade");
 		
 //		Now we have a object in memory.
 		Student std2 = new Student();
 		
 		std2.setName(nome);
-		std2.setAge(Integer.valueOf(idade));
+//		std2.setAge(Integer.valueOf(idade))
 		
 		for(int i = 1; i <= 4; i++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina: " + i);
@@ -39,7 +39,7 @@ public class FirstClassJava {
 		}
 
 		System.out.println("Média do " + std2.getName() + " é: " + std2.getMedia() +
-		(std2.getAlunoAprovado() ? " Aprovado" : " Reprovado"));
+		std2.getAlunoAprovado2());
 
 	}
 
