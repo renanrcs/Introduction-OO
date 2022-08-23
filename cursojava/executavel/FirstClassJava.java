@@ -25,7 +25,7 @@ public class FirstClassJava {
 		std2.setName(nome);
 //		std2.setAge(Integer.valueOf(idade))
 		
-		for(int i = 1; i <= 4; i++) {
+		for(int i = 1; i <= 2; i++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina: " + i);
 			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina: " + i);
 			
@@ -59,13 +59,30 @@ public class FirstClassJava {
 
 			for (Student student : students) {	
 				
-				if(student.getName().equalsIgnoreCase("renan")) {
-					
-				System.out.println("Média do " + student.getName() + " é: " + student.getMedia() +
-						student.getAlunoAprovado2());
-				System.out.println("-----------------------------------------------------------------");
+				if(student.getName().equalsIgnoreCase("enan")) {			
+					students.remove(student);
+					break;
 				}
 			}
+			
+			System.out.println("Lista de Alunos e Média");
+			
+			for (Student student : students) {				
+				System.out.println("Média do " + student.getName() + " é: " + student.getMedia() +
+						student.getAlunoAprovado2());
+			}
+			
+			System.out.println("\nNotas de cada Matéria por aluno:");
+			System.out.println("-----------------------------------------------------------------");
+			for (Student student : students) {
+				
+				System.out.println("Aluno: " + student.getName());
+				for(Disciplina disciplina : student.getDisciplina() ) {
+					System.out.println("Matéria - " + disciplina.getDisciplina() + "\tNota: " + disciplina.getNota());
+				}
+				System.out.println("-----------------------------------------------------------------");
+			}
+			
 
 	}
 
