@@ -1,5 +1,8 @@
 package cursojava.executavel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Disciplina;
@@ -9,7 +12,11 @@ public class FirstClassJava {
 //	Main is a auto run object in Java
 	public static void main(String[] args) {
 		
-		String nome = JOptionPane.showInputDialog("Informe seu nome");
+		List<Student> students = new ArrayList<Student>();
+		
+		for(int qtd = 1; qtd <= 2; qtd++) {
+		
+		String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 //		String idade = JOptionPane.showInputDialog("Informe sua idade");
 		
 //		Now we have a object in memory.
@@ -46,9 +53,15 @@ public class FirstClassJava {
 			continuar = JOptionPane.showConfirmDialog(null, "Deseja remover outra disciplina?");
 			}
 		}
+		
+		students.add(std2);
+	}
 
-		System.out.println("Média do " + std2.getName() + " é: " + std2.getMedia() +
-		std2.getAlunoAprovado2());
+			for (Student student : students) {				
+				System.out.println("Média do " + student.getName() + " é: " + student.getMedia() +
+						student.getAlunoAprovado2());
+				System.out.println("-----------------------------------------------------------------");
+			}
 
 	}
 
