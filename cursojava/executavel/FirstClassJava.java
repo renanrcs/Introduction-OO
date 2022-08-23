@@ -57,10 +57,14 @@ public class FirstClassJava {
 		students.add(std2);
 	}
 
-			for (Student student : students) {				
+			for (Student student : students) {	
+				
+				if(student.getName().equalsIgnoreCase("renan")) {
+					
 				System.out.println("Média do " + student.getName() + " é: " + student.getMedia() +
 						student.getAlunoAprovado2());
 				System.out.println("-----------------------------------------------------------------");
+				}
 			}
 
 	}
