@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Disciplina;
 import cursojava.classes.Student;
+import cursojava.constantes.StatusStudent;
 
 public class FirstClassJava {
 //	Main is a auto run object in Java
@@ -14,7 +15,11 @@ public class FirstClassJava {
 		
 		List<Student> students = new ArrayList<Student>();
 		
-		for(int qtd = 1; qtd <= 2; qtd++) {
+		List<Student> studentsApproved = new ArrayList<Student>();
+		List<Student> studentsDisapproved = new ArrayList<Student>();
+		List<Student> studentsRecovery = new ArrayList<Student>();
+		
+		for(int qtd = 1; qtd <= 5; qtd++) {
 		
 		String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 //		String idade = JOptionPane.showInputDialog("Informe sua idade");
@@ -102,13 +107,47 @@ public class FirstClassJava {
 				System.out.println("-----------------------------------------------------------------");
 			}
 			
-			System.out.println("Troca de Alunos");
+			for(Student student: students) { //Separated by List
+				
+				if(student.getAlunoAprovado2().equalsIgnoreCase(StatusStudent.APROVADO)) {
+					studentsApproved.add(student);
+				}else if(student.getAlunoAprovado2().equalsIgnoreCase(StatusStudent.RECUPERACAO)) {
+					studentsRecovery.add(student);
+				}else {
+					studentsDisapproved.add(student);
+				}
+			}
 			
+			System.out.println("-------------Lista Aprovados------------------");
+			for (Student student : studentsApproved) {
+				System.out.println(student.getName());
+			}
 			
-
+			System.out.println("-------------Lista Recuperação------------------");
+			for (Student student : studentsRecovery) {
+				System.out.println(student.getName());
+			}
+			
+			System.out.println("-------------Lista Reprovados-------------------");
+			for (Student student : studentsDisapproved) {
+				System.out.println(student.getName());
+			}
+			
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
