@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.StatusAluno;
+
 public class Student {
 //	Atributos
 	private String name;
@@ -161,10 +163,10 @@ public class Student {
 		
 		if(media >= 5) {
 			if(media >= 7)
-				return " Aluno Aprovado";
-			return " Aluno em recuperação";
+				return StatusAluno.APROVADO;
+			return StatusAluno.RECUPERACAO;
 		}else {
-			return " Reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 
