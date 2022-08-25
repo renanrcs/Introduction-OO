@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -15,9 +16,7 @@ public class FirstClassJava {
 		
 		List<Student> students = new ArrayList<Student>();
 		
-		List<Student> studentsApproved = new ArrayList<Student>();
-		List<Student> studentsDisapproved = new ArrayList<Student>();
-		List<Student> studentsRecovery = new ArrayList<Student>();
+		HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>(); 
 		
 		for(int qtd = 1; qtd <= 5; qtd++) {
 		
@@ -107,29 +106,33 @@ public class FirstClassJava {
 				System.out.println("-----------------------------------------------------------------");
 			}
 			
+			maps.put(StatusStudent.APROVADO, new ArrayList<>());
+			maps.put(StatusStudent.RECUPERACAO, new ArrayList<>());
+			maps.put(StatusStudent.REPROVADO, new ArrayList<>());
+			
 			for(Student student: students) { //Separated by List
 				
 				if(student.getAlunoAprovado2().equalsIgnoreCase(StatusStudent.APROVADO)) {
-					studentsApproved.add(student);
+					maps.get(StatusStudent.APROVADO).add(student);
 				}else if(student.getAlunoAprovado2().equalsIgnoreCase(StatusStudent.RECUPERACAO)) {
-					studentsRecovery.add(student);
+					maps.get(StatusStudent.RECUPERACAO).add(student);
 				}else {
-					studentsDisapproved.add(student);
+					maps.get(StatusStudent.REPROVADO).add(student);
 				}
 			}
 			
 			System.out.println("-------------Lista Aprovados------------------");
-			for (Student student : studentsApproved) {
+			for (Student student : maps.get(StatusStudent.APROVADO)) {
 				System.out.println(student.getName());
 			}
 			
 			System.out.println("-------------Lista Recuperação------------------");
-			for (Student student : studentsRecovery) {
+			for (Student student : maps.get(StatusStudent.RECUPERACAO)) {
 				System.out.println(student.getName());
 			}
 			
 			System.out.println("-------------Lista Reprovados-------------------");
-			for (Student student : studentsDisapproved) {
+			for (Student student : maps.get(StatusStudent.REPROVADO)) {
 				System.out.println(student.getName());
 			}
 			
