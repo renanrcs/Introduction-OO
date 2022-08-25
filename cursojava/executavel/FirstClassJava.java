@@ -14,6 +14,11 @@ public class FirstClassJava {
 //	Main is a auto run object in Java
 	public static void main(String[] args) {
 		
+		String login = JOptionPane.showInputDialog("Informe nome de usuario");
+		String senha = JOptionPane.showInputDialog("Informe sua senha");
+		
+		if(login.equalsIgnoreCase("adimin")  &&  (senha.equalsIgnoreCase("adimin"))) {
+			
 		List<Student> students = new ArrayList<Student>();
 		
 		HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>(); 
@@ -136,6 +141,7 @@ public class FirstClassJava {
 				System.out.println(student.getName());
 			}
 			
+		}
 	}
 
 }
