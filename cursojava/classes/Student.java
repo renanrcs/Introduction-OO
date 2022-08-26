@@ -6,19 +6,11 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusStudent;
 
-public class Student {
+public class Student extends Person{
 //	Atributos
-	private String name;
-	private int age;
-	private String dateNasc;
-	private String rg;
-	private String cpf;
-	private String nameFather;
-	private String nameMather;
 	private String dateEnrollment;
 	private String nameSchool;
 	private String serieEnrolled;
-	
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public List<Disciplina> getDisciplina() {
