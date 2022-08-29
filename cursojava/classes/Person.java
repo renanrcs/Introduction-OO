@@ -1,5 +1,5 @@
 package cursojava.classes;
-
+//Super Class
 public class Person {
 //	Atributes
 	protected String name;

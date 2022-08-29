@@ -24,5 +24,12 @@ public class Secretary extends Person {
 	public void setExperience(String experience) {
 		this.experience = experience;
 	}
+	
+	@Override
+	public String toString() {
+		return "Secretary [register=" + register + ", jobLevel=" + jobLevel + ", experience=" + experience + ",\n name="
+				+ name + ", age=" + age + ", dateNasc=" + dateNasc + ", rg=" + rg + ", cpf=" + cpf + ",\n nameFather="
+				+ nameFather + ", nameMather=" + nameMather + "]";
+	}
 
 }
