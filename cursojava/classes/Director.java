@@ -24,6 +24,17 @@ public class Director extends Person{
 	public void setTitration(String titration) {
 		this.titration = titration;
 	}
+	
+	@Override /*Identifica metodo sobreescrito*/
+	public boolean isOlder() {
+		// TODO Auto-generated method stub
+		return super.isOlder();
+	}
+	
+	public String msgIsOlder() {
+		return this.isOlder() ? "Maior de Idade" : "Menor de idade";
+	}
+	
 	@Override
 	public String toString() {
 		return "Director [educationRegister=" + educationRegister + ", directionTime=" + directionTime + ",\n titration="

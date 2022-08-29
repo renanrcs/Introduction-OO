@@ -13,6 +13,7 @@ public class TestChildClass {
 		
 		Director director = new Director();
 		director.setName("Diretor da escola");
+		director.setAge(49);
 		
 		Secretary secretary = new Secretary();
 		secretary.setName("Novo secretario");
@@ -20,8 +21,10 @@ public class TestChildClass {
 		
 		System.out.println(director);
 		System.out.println("================================================================================");
+		System.out.println(director.msgIsOlder());
+		System.out.println("================================================================================");
 		System.out.println(secretary);
-
+		System.out.println("================================================================================");
 	}
 
 }

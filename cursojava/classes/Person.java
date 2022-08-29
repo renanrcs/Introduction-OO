@@ -52,4 +52,8 @@ public class Person {
 	public void setNameMather(String nameMather) {
 		this.nameMather = nameMather;
 	}
+	
+	public boolean isOlder() {
+		return this.age >= 18;
+	}
 }
