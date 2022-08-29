@@ -25,6 +25,9 @@ public class TestChildClass {
 		System.out.println("================================================================================");
 		System.out.println(secretary);
 		System.out.println("================================================================================");
+		System.out.println("Sálario do Diretor é de: R$" + director.salary());
+		System.out.println("Sálario do Secretario é de: R$" + secretary.salary());
+		System.out.println("Sálario do Aluno é de: R$" + student.salary());
 	}
 
 }

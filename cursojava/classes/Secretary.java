@@ -31,5 +31,10 @@ public class Secretary extends Person {
 				+ name + ", age=" + age + ", dateNasc=" + dateNasc + ", rg=" + rg + ", cpf=" + cpf + ",\n nameFather="
 				+ nameFather + ", nameMather=" + nameMather + "]";
 	}
+	@Override
+	public double salary() {
+		// TODO Auto-generated method stub
+		return 1800.80 * 0.9;
+	}
 
 }

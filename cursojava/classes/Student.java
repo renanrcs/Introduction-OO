@@ -178,6 +178,12 @@ public class Student extends Person{
 		Student other = (Student) obj;
 		return Objects.equals(name, other.name);
 	}
+
+	@Override
+	public double salary() {
+		// TODO Auto-generated method stub
+		return 1500.9;
+	}
 	
 	
 	

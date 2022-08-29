@@ -1,6 +1,6 @@
 package cursojava.classes;
 //Super Class
-public class Person {
+public abstract class Person {
 //	Atributes
 	protected String name;
 	protected int age;
@@ -9,6 +9,8 @@ public class Person {
 	protected String cpf;
 	protected String nameFather;
 	protected String nameMather;
+	
+	public abstract double salary();
 	
 	public String getName() {
 		return name;

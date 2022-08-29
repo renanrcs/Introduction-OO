@@ -41,6 +41,11 @@ public class Director extends Person{
 				+ titration + ", name=" + name + ", age=" + age + ", dateNasc=" + dateNasc + ", rg=" + rg + ",\n cpf="
 				+ cpf + ", nameFather=" + nameFather + ", nameMather=" + nameMather + "]";
 	}
+	@Override
+	public double salary() {
+		// TODO Auto-generated method stub
+		return 3900.78;
+	}
 	
 	
 
