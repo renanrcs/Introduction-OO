@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretary;
 import cursojava.classes.Student;
 import cursojava.constantes.StatusStudent;
 
@@ -17,7 +18,11 @@ public class FirstClassJava {
 		String login = JOptionPane.showInputDialog("Informe nome de usuario");
 		String senha = JOptionPane.showInputDialog("Informe sua senha");
 		
-		if(login.equalsIgnoreCase("adimin")  &&  (senha.equalsIgnoreCase("adimin"))) {
+		Secretary secretary = new Secretary();/*directly with object*/
+		secretary.setLogin(login);
+		secretary.setPassword(senha);
+		
+		if(secretary.authentication()) {
 			
 		List<Student> students = new ArrayList<Student>();
 		
@@ -141,6 +146,8 @@ public class FirstClassJava {
 				System.out.println(student.getName());
 			}
 			
+		}else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 	}
 
