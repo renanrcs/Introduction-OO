@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import cursojava.classes.Director;
+import cursojava.classes.Person;
 import cursojava.classes.Secretary;
 import cursojava.classes.Student;
 
@@ -28,6 +29,23 @@ public class TestChildClass {
 		System.out.println("Sálario do Diretor é de: R$" + director.salary());
 		System.out.println("Sálario do Secretario é de: R$" + secretary.salary());
 		System.out.println("Sálario do Aluno é de: R$" + student.salary());
+		
+		System.out.println("================================================================================");
+
+		Person person = new Student();
+		person = director;
+		System.out.println(person.salary());
+		
+		System.out.println("================================================================================");
+	
+		teste(student);
+		teste(director);
+		teste(secretary);
+	}
+	
+	public static void teste(Person person) {
+		System.out.println(person.getName() + " é legal " +
+				" e seu salario é de: " + person.salary());
 	}
 
 }
