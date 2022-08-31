@@ -1,11 +1,24 @@
 package cursojava.classes;
 
-public class Director extends Person{
+import cursojava.interfaces.AllowAccess;
+
+public class Director extends Person implements AllowAccess{
 	
 	private String educationRegister;
 	private int directionTime;
 	private String titration;
 	
+	private String login;
+	private String password;
+	
+	public Director() {
+		super();
+	}
+	public Director(String login, String password) {
+		super();
+		this.login = login;
+		this.password = password;
+	}
 	public String getEducationRegister() {
 		return educationRegister;
 	}
@@ -45,6 +58,21 @@ public class Director extends Person{
 	public double salary() {
 		// TODO Auto-generated method stub
 		return 3900.78;
+	}
+	
+	/*this method doesn't used*/
+	@Override
+	public boolean authentication(String login, String password) {
+		this.login = login;
+		this.password = password;
+		return authentication();
+	}
+
+	/*this method of authentication contract*/	
+	@Override
+	public boolean authentication() {
+		return this.login.equalsIgnoreCase("renan") && 
+				this.password.equalsIgnoreCase("123");
 	}
 	
 	
