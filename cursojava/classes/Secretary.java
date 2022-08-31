@@ -7,7 +7,18 @@ public class Secretary extends Person implements AllowAccess {
 	private String register;
 	private String jobLevel;
 	private String experience;
+	
+	private String login;
+	private String password;
 		
+	public Secretary() {
+		super();
+	}
+	public Secretary(String login, String password) {
+		super();
+		this.login = login;
+		this.password = password;
+	}
 	public String getRegister() {
 		return register;
 	}
@@ -37,11 +48,19 @@ public class Secretary extends Person implements AllowAccess {
 	public double salary() {
 		return 1800.80 * 0.9;
 	}
-	
-	/*this method of authentication contract*/	
+	/*this method doesn't used*/
 	@Override
 	public boolean authentication(String login, String password) {
-		return login.equalsIgnoreCase("adimin") && password.equalsIgnoreCase("adimin");
+		this.login = login;
+		this.password = password;
+		return authentication();
+	}
+
+	/*this method of authentication contract*/	
+	@Override
+	public boolean authentication() {
+		return this.login.equalsIgnoreCase("admin") && 
+				this.password.equalsIgnoreCase("admin");
 	}
 	
 }

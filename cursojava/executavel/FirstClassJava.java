@@ -18,8 +18,10 @@ public class FirstClassJava {
 		
 		String login = JOptionPane.showInputDialog("Informe nome de usuario");
 		String password = JOptionPane.showInputDialog("Informe sua senha");
+		
+		AllowAccess allowAccess = new Secretary(login, password);
 				
-		if(new Secretary().authentication(login, password)) {
+		if(allowAccess.authentication()) {
 			
 		List<Student> students = new ArrayList<Student>();
 		
