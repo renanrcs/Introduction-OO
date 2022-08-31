@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import cursojava.auxiliaryclass.AuthenticationFunction;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretary;
 import cursojava.classes.Student;
@@ -19,9 +20,7 @@ public class FirstClassJava {
 		String login = JOptionPane.showInputDialog("Informe nome de usuario");
 		String password = JOptionPane.showInputDialog("Informe sua senha");
 		
-		AllowAccess allowAccess = new Secretary(login, password);
-				
-		if(allowAccess.authentication()) {
+		if(new AuthenticationFunction(new Secretary(login, password)).authenticate()) {/*only who with */
 			
 		List<Student> students = new ArrayList<Student>();
 		
