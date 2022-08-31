@@ -7,10 +7,7 @@ public class Secretary extends Person implements AllowAccess {
 	private String register;
 	private String jobLevel;
 	private String experience;
-	
-	private String login;
-	private String password;
-	
+		
 	public String getRegister() {
 		return register;
 	}
@@ -38,28 +35,13 @@ public class Secretary extends Person implements AllowAccess {
 	}
 	@Override
 	public double salary() {
-		// TODO Auto-generated method stub
 		return 1800.80 * 0.9;
 	}
 	
-	/*this method of authentication contract*/
+	/*this method of authentication contract*/	
 	@Override
-	public boolean authentication() {
-		return this.login.equalsIgnoreCase("adimin") &&
-				this.password.equalsIgnoreCase("adimin");
+	public boolean authentication(String login, String password) {
+		return login.equalsIgnoreCase("adimin") && password.equalsIgnoreCase("adimin");
 	}
 	
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 }

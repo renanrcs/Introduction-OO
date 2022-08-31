@@ -10,19 +10,16 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretary;
 import cursojava.classes.Student;
 import cursojava.constantes.StatusStudent;
+import cursojava.interfaces.AllowAccess;
 
 public class FirstClassJava {
 //	Main is a auto run object in Java
 	public static void main(String[] args) {
 		
 		String login = JOptionPane.showInputDialog("Informe nome de usuario");
-		String senha = JOptionPane.showInputDialog("Informe sua senha");
-		
-		Secretary secretary = new Secretary();/*directly with object*/
-		secretary.setLogin(login);
-		secretary.setPassword(senha);
-		
-		if(secretary.authentication()) {
+		String password = JOptionPane.showInputDialog("Informe sua senha");
+				
+		if(new Secretary().authentication(login, password)) {
 			
 		List<Student> students = new ArrayList<Student>();
 		
