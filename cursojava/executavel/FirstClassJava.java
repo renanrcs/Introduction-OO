@@ -9,25 +9,25 @@ import javax.swing.JOptionPane;
 import cursojava.auxiliaryclass.AuthenticationFunction;
 import cursojava.classes.Director;
 import cursojava.classes.Disciplina;
-import cursojava.classes.Secretary;
 import cursojava.classes.Student;
 import cursojava.constantes.StatusStudent;
-import cursojava.interfaces.AllowAccess;
 
 public class FirstClassJava {
 //	Main is a auto run object in Java
 	public static void main(String[] args) {
+		
+		try {
 		
 		String login = JOptionPane.showInputDialog("Informe nome de usuario");
 		String password = JOptionPane.showInputDialog("Informe sua senha");
 		
 		if(new AuthenticationFunction(new Director(login, password)).authenticate()) {/*only who with */
 			
-		List<Student> students = new ArrayList<Student>();
+		List<Student> students = null;
 		
 		HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>(); 
 		
-		for(int qtd = 1; qtd <= 5; qtd++) {
+		for(int qtd = 1; qtd <= 2; qtd++) {
 		
 		String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 //		String idade = JOptionPane.showInputDialog("Informe sua idade");
@@ -148,7 +148,13 @@ public class FirstClassJava {
 		}else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
-	}
+		
+		}catch (Exception e){
+			e.printStackTrace();//print error in the java console
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas!");
+		}
+		
+	}//main
 
 }
 
