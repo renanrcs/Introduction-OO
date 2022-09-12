@@ -150,8 +150,19 @@ public class FirstClassJava {
 		}
 		
 		}catch (Exception e){
+			
+			StringBuilder out = new StringBuilder();
+			
 			e.printStackTrace();//print error in the java console
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas!");
+			
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				out.append("\n Classe de erro : " + e.getStackTrace()[i].getClassName());
+				out.append("\n Metodo de erro : " + e.getStackTrace()[i].getMethodName());
+				out.append("\n Linha de erro : " + e.getStackTrace()[i].getLineNumber());
+				out.append("\n Classe : " + e.getClass().getName());
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas!" + out.toString());
 		}
 		
 	}//main
