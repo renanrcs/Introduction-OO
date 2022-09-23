@@ -30,13 +30,13 @@ public class FirstClassJava {
 		for(int qtd = 1; qtd <= 2; qtd++) {
 		
 		String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
-//		String idade = JOptionPane.showInputDialog("Informe sua idade");
+		String idade = JOptionPane.showInputDialog("Informe sua idade");
 		
 //		Now we have a object in memory.
 		Student std2 = new Student();
 		
 		std2.setName(nome);
-//		std2.setAge(Integer.valueOf(idade))
+		std2.setAge(Integer.valueOf(idade));
 		
 		for(int i = 1; i <= 1; i++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina: " + i);
@@ -149,7 +149,7 @@ public class FirstClassJava {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 		
-		}catch (Exception e){
+		}catch (NumberFormatException e){
 			
 			StringBuilder out = new StringBuilder();
 			
@@ -162,7 +162,11 @@ public class FirstClassJava {
 				out.append("\n Classe : " + e.getClass().getName());
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas!" + out.toString());
+			JOptionPane.showMessageDialog(null, "Erro de conversão de números " + out.toString());
+		}catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Erro de null pointer Exception " + e.getClass());
+		}catch (Exception e) {
+			e.getStackTrace();
 		}
 		
 	}//main
