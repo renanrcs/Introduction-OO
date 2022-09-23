@@ -20,19 +20,19 @@ public class FirstClassJava {
 
 		try {
 
-			File file = new File("arquivo.txt");
-			Scanner scanner = new Scanner(file);
+//			File file = new File("arquivo.txt");
+//			Scanner scanner = new Scanner(System.in);
 
 			String login = JOptionPane.showInputDialog("Informe nome de usuario");
 			String password = JOptionPane.showInputDialog("Informe sua senha");
 
 			if (new AuthenticationFunction(new Director(login, password)).authenticate()) {/* only who with */
 
-				List<Student> students = null;
+				List<Student> students = new ArrayList<>();
 
 				HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>();
 
-				for (int qtd = 1; qtd <= 2; qtd++) {
+				for (int qtd = 1; qtd <= 1; qtd++) {
 
 					String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 					String idade = JOptionPane.showInputDialog("Informe sua idade");
@@ -172,9 +172,11 @@ public class FirstClassJava {
 			JOptionPane.showMessageDialog(null, "Erro de conversão de números " + out.toString());
 		} catch (NullPointerException e) {
 			JOptionPane.showMessageDialog(null, "Erro de null pointer Exception " + e.getClass());
-		} catch (Exception e) {
+		} catch (Exception e) {//catch all exceptions we don't foresee
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro inesperado " + e.getClass().getName());
+		} finally {// always runs. if there are errors or not.
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender JAVA ");
 		}
 
 	}// main
