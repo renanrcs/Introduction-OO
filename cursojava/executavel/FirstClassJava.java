@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import curso.java.exception.ExceptionProcessNote;
 import cursojava.auxiliaryclass.AuthenticationFunction;
 import cursojava.classes.Director;
 import cursojava.classes.Disciplina;
@@ -19,9 +21,13 @@ public class FirstClassJava {
 	public static void main(String[] args) {
 
 		try {
-
-//			File file = new File("arquivo.txt");
-//			Scanner scanner = new Scanner(System.in);
+			
+			try {
+				File file = new File("arquivo.txt");
+				Scanner scanner = new Scanner(file);
+			} catch (FileNotFoundException e) {
+				throw new ExceptionProcessNote(e.getMessage());
+			}
 
 			String login = JOptionPane.showInputDialog("Informe nome de usuario");
 			String password = JOptionPane.showInputDialog("Informe sua senha");
