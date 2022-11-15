@@ -21,13 +21,13 @@ public class FirstClassJava {
 	public static void main(String[] args) {
 
 		try {
-			
-			try {
-				File file = new File("arquivo.txt");
-				Scanner scanner = new Scanner(file);
-			} catch (FileNotFoundException e) {
-				throw new ExceptionProcessNote(e.getMessage());
-			}
+			double[] notas = new double[4];
+//			try {
+//				File file = new File("arquivo.txt");
+//				Scanner scanner = new Scanner(file);
+//			} catch (FileNotFoundException e) {
+//				throw new ExceptionProcessNote(e.getMessage());
+//			}
 
 			String login = JOptionPane.showInputDialog("Informe nome de usuario");
 			String password = JOptionPane.showInputDialog("Informe sua senha");
@@ -38,7 +38,7 @@ public class FirstClassJava {
 
 				HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>();
 
-				for (int qtd = 1; qtd <= 1; qtd++) {
+				for (int qtd = 1; qtd <= 2; qtd++) {
 
 					String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 					String idade = JOptionPane.showInputDialog("Informe sua idade");
@@ -51,12 +51,15 @@ public class FirstClassJava {
 
 					for (int i = 1; i <= 1; i++) {
 						String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina: " + i);
-						String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina: " + i);
 
 //		Instacia de disciplina e passando seus atributos
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setNota(Double.valueOf(notaDisciplina));
+						
+						for (int j = 0; j < notas.length; j++) {
+							notas[j] = Double.valueOf(JOptionPane.showInputDialog("Informe nota "+j));
+						}
+						disciplina.setNota(notas);
 
 //		Adicionando disciplina a lista de disciplinas
 						std2.getDisciplina().add(disciplina);
@@ -80,33 +83,31 @@ public class FirstClassJava {
 					}
 
 					students.add(std2);
+					 
 				}
-
-				for (Student student : students) {
-
-					if (student.getName().equalsIgnoreCase("enan")) {
+//				Metodo para remover
+				
+				for (Student student : students) { 
+					if(student.removeStudent("gabriel")) {
 						students.remove(student);
-						break;
+						break; 
 					}
 				}
-
+				 
+//				Metodo para substituir
 				for (int count = 0; count < students.size(); count++) {
-
 					if (students.get(count).getName().equalsIgnoreCase("Renan")) {
-
 						Student newStudent = new Student();
-
 						newStudent.setName("Novo Aluno");
-
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina("Java Web");
-						disciplina.setNota(8);
+						disciplina.setNota(notas);
 
 						newStudent.getDisciplina().add(disciplina);
 
 						students.set(count, newStudent);
 					}
-				}
+				}//Esse metodo deve ser abstrato e implementado na classe
 
 				System.out.println("Lista de Alunos e Média");
 
@@ -123,7 +124,7 @@ public class FirstClassJava {
 					System.out.println("Aluno: " + student.getName());
 					for (Disciplina disciplina : student.getDisciplina()) {
 						System.out
-								.println("Matéria - " + disciplina.getDisciplina() + "\tNota: " + disciplina.getNota());
+								.println("Matéria - " + disciplina.getDisciplina() + "\tNotas: " + disciplina.getNota());
 					}
 					System.out.println("-----------------------------------------------------------------");
 				}

@@ -133,7 +133,7 @@ public class Student extends Person{
 		double somaNotas = 0.0;
 		
 		for(Disciplina disciplina: disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
 		
 		return somaNotas / disciplinas.size();
@@ -143,11 +143,8 @@ public class Student extends Person{
 	public boolean getAlunoAprovado() {
 		double media = this.getMedia();
 		
-		if(media >= 7) {
-			return true;
-		}else {
-			return false;
-		}
+		return (media >= 7); 
+	
 	}
 //	Metodo para informar se o aluno foi Aprovado, Recuperação, reprovado
 	public String getAlunoAprovado2() {
@@ -160,6 +157,11 @@ public class Student extends Person{
 		}else {
 			return StatusStudent.REPROVADO;
 		}
+	}
+	
+//	Metodo para remover aluno pelo nome
+	public boolean removeStudent(String name) {
+		return this.getName().equalsIgnoreCase(name);
 	}
 
 	@Override
