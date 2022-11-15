@@ -138,6 +138,21 @@ public class Student extends Person{
 		
 		return somaNotas / disciplinas.size();
 	}
+//	Informar maior nota do aluno
+	public double getMaiorNota() {
+		double maiorNota = 0.0;
+		for(Disciplina d : disciplinas) {
+			for(int i = 0; i < d.getNotaD().length; ) {
+				double nota = d.getNotaD()[i];
+				
+				if(nota > maiorNota) 
+					maiorNota = nota;
+				
+				i++;
+			}
+		}
+		return maiorNota;
+	}
 	
 //	Metodo para informar se o aluno foi Aprovado
 	public boolean getAlunoAprovado() {

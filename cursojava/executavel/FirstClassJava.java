@@ -21,7 +21,7 @@ public class FirstClassJava {
 	public static void main(String[] args) {
 
 		try {
-			double[] notas = new double[4];
+			
 //			try {
 //				File file = new File("arquivo.txt");
 //				Scanner scanner = new Scanner(file);
@@ -38,8 +38,8 @@ public class FirstClassJava {
 
 				HashMap<String, ArrayList<Student>> maps = new HashMap<String, ArrayList<Student>>();
 
-				for (int qtd = 1; qtd <= 2; qtd++) {
-
+				for (int qtd = 1; qtd <= 1; qtd++) {
+					double[] notas = new double[4];
 					String nome = JOptionPane.showInputDialog("Informe o nome do aluno " + qtd);
 					String idade = JOptionPane.showInputDialog("Informe sua idade");
 
@@ -57,7 +57,7 @@ public class FirstClassJava {
 						disciplina.setDisciplina(nomeDisciplina);
 						
 						for (int j = 0; j < notas.length; j++) {
-							notas[j] = Double.valueOf(JOptionPane.showInputDialog("Informe nota "+j));
+							notas[j] = Double.valueOf(JOptionPane.showInputDialog("Informe "+ (j+1) + "ª nota"));
 						}
 						disciplina.setNota(notas);
 
@@ -101,7 +101,7 @@ public class FirstClassJava {
 						newStudent.setName("Novo Aluno");
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina("Java Web");
-						disciplina.setNota(notas);
+//						disciplina.setNota(notas);
 
 						newStudent.getDisciplina().add(disciplina);
 
@@ -126,6 +126,7 @@ public class FirstClassJava {
 						System.out
 								.println("Matéria - " + disciplina.getDisciplina() + "\tNotas: " + disciplina.getNota());
 					}
+					System.out.println( student.getDisciplina() +"Sua maior nota foi: "+ student.getMaiorNota());
 					System.out.println("-----------------------------------------------------------------");
 				}
 

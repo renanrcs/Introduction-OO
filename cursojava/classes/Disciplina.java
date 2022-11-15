@@ -4,23 +4,30 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Disciplina {
-	
+
 	private double[] nota = new double[4];
 	private String disciplina;
-	
+
 	public String getNota() {
 		return Arrays.toString(nota);
 	}
+	
+	public double[] getNotaD() {
+		return nota;
+	}
+
 	public void setNota(double[] nota) {
 		this.nota = nota;
 	}
+
 	public String getDisciplina() {
 		return disciplina;
 	}
+
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
-	
+
 	public double getMediaNotas() {
 		double somaTotal = 0;
 		for (double d : nota) {
@@ -28,8 +35,8 @@ public class Disciplina {
 		}
 		return somaTotal / nota.length;
 	}
-	
-@Override
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -54,6 +61,5 @@ public class Disciplina {
 	public String toString() {
 		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
 	}
-	
-	
+
 }
