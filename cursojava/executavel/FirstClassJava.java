@@ -126,7 +126,8 @@ public class FirstClassJava {
 						System.out
 								.println("Matéria - " + disciplina.getDisciplina() + "\tNotas: " + disciplina.getNota());
 					}
-					System.out.println( student.getDisciplina() +"Sua maior nota foi: "+ student.getMaiorNota());
+					System.out.println("Sua maior nota foi: "+ student.getMaiorNota());
+					System.out.println("Sua menor nota foi: "+ student.getMenorNota());
 					System.out.println("-----------------------------------------------------------------");
 				}
 

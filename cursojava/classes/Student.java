@@ -153,6 +153,21 @@ public class Student extends Person{
 		}
 		return maiorNota;
 	}
+//	Informar menor nota do aluno
+	public double getMenorNota() {
+		double menorNota = 10.00;
+		for(Disciplina d : disciplinas) {
+			for(int i = 0; i < d.getNotaD().length; ) {
+				double nota = d.getNotaD()[i];
+				
+				if(nota < menorNota) 
+					menorNota = nota;
+				
+				i++;
+			}
+		}
+		return menorNota;
+	}
 	
 //	Metodo para informar se o aluno foi Aprovado
 	public boolean getAlunoAprovado() {
