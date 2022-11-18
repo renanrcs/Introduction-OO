@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class ExThread {
 	public static void main(String[] args) throws InterruptedException {
 		
+/*=================================1ª THREAD==================================================*/
 		new Thread() {
 			public void run() {/*Executa o que queremos*/
 				/*Cód que quero executar em paralelo*/
@@ -22,6 +23,21 @@ public class ExThread {
 				}
 			}
 		}.start();/*Start liga a thread que fica processando paralelamente por tras*/
+		
+		
+/*=================================2ª THREAD==================================================*/
+		new Thread() {
+			public void run() {
+				for (int i = 0; i < 10; i++) {
+					try {
+						Thread.sleep(800);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					System.out.println("Enviando Nota Fiscal");
+				}
+			}
+		}.start();
 		
 		
 		/*cód do sistema de usuario continua o fluxo de execução*/
